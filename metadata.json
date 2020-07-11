@@ -1,0 +1,14 @@
+{
+    "uuid": "power-consumption@kaltakm",
+    "name": "Power Consumption",
+    "description": "Shows current power consumption",
+    "cinnamon-version": [
+        "3.6",
+        "3.8",
+        "4.0",
+        "4.2",
+        "4.4",
+        "4.6"
+    ],
+    "last-edited": 1591912096
+}
