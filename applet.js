@@ -50,11 +50,11 @@ CPUTemperatureApplet.prototype = {
     this.settings = new Settings.AppletSettings(this.state, metadata.uuid, instance_id);
 
     this.settings.bindProperty(Settings.BindingDirection.IN, 'use-fahrenheit', 'useFahrenheit', () => this.on_settings_changed(), null);
-    this.settings.bindProperty(Settings.BindingDirection.IN, 'only-integer-part', 'onlyIntegerPart', () => this.on_settings_changed(), null);
-    this.settings.bindProperty(Settings.BindingDirection.IN, 'show-unit', 'showUnit', () => this.on_settings_changed(), null);
-    this.settings.bindProperty(Settings.BindingDirection.IN, 'show-unit-letter', 'showUnitLetter', () => this.on_settings_changed(), null);
-    this.settings.bindProperty(Settings.BindingDirection.IN, 'show-label-prefix', 'showLabelPrefix', () => this.on_settings_changed(), null);
-    this.settings.bindProperty(Settings.BindingDirection.IN, 'label-prefix', 'labelPrefix', () => this.on_settings_changed(), null);
+//    this.settings.bindProperty(Settings.BindingDirection.IN, 'only-integer-part', 'onlyIntegerPart', () => this.on_settings_changed(), null);
+//    this.settings.bindProperty(Settings.BindingDirection.IN, 'show-unit', 'showUnit', () => this.on_settings_changed(), null);
+//    this.settings.bindProperty(Settings.BindingDirection.IN, 'show-unit-letter', 'showUnitLetter', () => this.on_settings_changed(), null);
+//    this.settings.bindProperty(Settings.BindingDirection.IN, 'show-label-prefix', 'showLabelPrefix', () => this.on_settings_changed(), null);
+//    this.settings.bindProperty(Settings.BindingDirection.IN, 'label-prefix', 'labelPrefix', () => this.on_settings_changed(), null);
     this.settings.bindProperty(Settings.BindingDirection.IN, 'interval', 'interval');
     this.settings.bindProperty(Settings.BindingDirection.IN, 'change-color', 'changeColor', () => this.on_settings_changed(), null);
     this.settings.bindProperty(Settings.BindingDirection.BIDIRECTIONAL, 'only-colors', 'onlyColors', () => this.on_settings_changed(), null);
