@@ -9,7 +9,7 @@ const Applet = imports.ui.applet;
 const Settings = imports.ui.settings;
 const Gettext = imports.gettext;
 
-const UUID = "power-consumption@kaltakm";
+const UUID = "power-consumption@mkaltak85";
 
 const HOME_DIR = GLib.get_home_dir();
 // ++ DEBUG is true only if the DEBUG file is present in this applet directory ($ touch DEBUG)
@@ -17,7 +17,7 @@ var _debug = Gio.file_new_for_path(HOME_DIR + "/.local/share/cinnamon/applets/" 
 const DEBUG = _debug.query_exists(null);
 
 const sensorRegex = /^([\sA-z\w]+[\s|:|\d]{1,4})(?:\s+\+)(\d+\.\d+)°[FC]|(?:\s+\()([a-z]+)(?:[\s=+]+)(\d+\.\d)°[FC],\s([a-z]+)(?:[\s=+]+)(\d+\.\d)/gm;
-const cpuIdentifiers = ['Tctl', 'CPU Temperature'];
+const cpuIdentifiers = ['Tctl', 'Power Consumption'];
 
 const _ = function(str) {
   let translation = Gettext.gettext(str);
@@ -156,7 +156,7 @@ CPUTemperatureApplet.prototype = {
   buildMenu: function(items) {
     this.menu.removeAll();
     let isOpen = this.menu.isOpen;
-    let section = new PopupMenu.PopupMenuSection(_('Temperature'));
+    let section = new PopupMenu.PopupMenuSection(_('Power'));
     if (items.length > 0) {
       for (let i = 0; i < items.length; i++) {
         section.addMenuItem(new PopupMenu.PopupMenuItem(items[i]));
@@ -164,7 +164,7 @@ CPUTemperatureApplet.prototype = {
     } else {
       let item = new PopupMenu.PopupMenuItem(this.content);
       item.connect('activate', function() {
-        Util.trySpawn(['xdg-open', 'https://github.com/linuxmint/cinnamon-spices-applets/issues?utf8=%E2%9C%93&q=is%3Aissue+temperature%40fevimu+']);
+        Util.trySpawn(['xdg-open', 'https://github.com/mkaltak85/power-consumption-applet']);
       });
       section.addMenuItem(item);
     }
